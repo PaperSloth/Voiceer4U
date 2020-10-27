@@ -9,7 +9,7 @@ UE4版では現状以下の場合のみ設定したボイスが再生されま�
 * Launchした時
 
 デモ動画 :
-https://twitter.com/PaperSloth/status/1320701896496091136?s=20
+https://twitter.com/PaperSloth/status/1321117202876039168
 
 サンプルに使用させていただいたボイス :[巻乃もなか様](https://twitter.com/monaka_0_0_7)<br>
 ボイス配付元 : https://makinomonaka.fanbox.cc/posts/768804
