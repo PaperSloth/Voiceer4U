@@ -1,7 +1,7 @@
 # VoiceerP4
 Unity向けのEditor拡張であるVoiccerがいいなと思ってUE4向けのPluginを作成してみました。<br>
 本家に比べてまだまだ機能不足ですが、使ってみてもらえればです。<br>
-https://github.com/negipoyoc/Voiceer
+本家Voiccer : https://github.com/negipoyoc/Voiceer
 
 UE4版では現状以下の場合のみ設定したボイスが再生されます。<br>
 * コンパイルした時
