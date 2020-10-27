@@ -14,10 +14,10 @@ class VOICEER4U_API UVoiceer4UConfig : public UObject
 public:
 	UVoiceer4UConfig(const FObjectInitializer& ObjectInitializer);
 
-	UPROPERTY(EditAnywhere, config, Category = "UVoiceer4U")
+	UPROPERTY(EditAnywhere, config, Category = "Voiceer4U")
 	bool UseEngineDefaultSound;
-	UPROPERTY(EditAnywhere, config, Category = "UVoiceer4U")
+	UPROPERTY(EditAnywhere, config, Category = "Voiceer4U")
 	int32 MaxRegistrySound;
-	UPROPERTY(EditAnywhere, config, Category = "UVoiceer4U")
+	UPROPERTY(EditAnywhere, config, Category = "Voiceer4U")
 	FString RootDirectory;
 };

@@ -19,7 +19,7 @@ class FVoiceer4UModule : public IModuleInterface
 {
 public:
 	virtual void StartupModule() override;
-	virtual void ShutdownModule() override {}
+	virtual void ShutdownModule() override { }
 
 private:
 	USoundCue* compileStartSound;
@@ -29,6 +29,7 @@ private:
 	USoundWave* engineStartSuccessWave;
 	USoundWave* engineFailedWave;
 
+	void OnResetSound();
 	void InitializeRandomSound(USoundCue* cue, const ESoundCategory Category, const int SoundNum, const FString& Root);
 	void ResetSoundCue(USoundCue* cue, USoundWave* wave, const float Volume, const float Pitch);
 	bool OnSaveConfig();

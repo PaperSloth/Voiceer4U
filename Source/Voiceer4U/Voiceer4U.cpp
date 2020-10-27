@@ -24,9 +24,9 @@ void FVoiceer4UModule::StartupModule()
 		ISettingsSectionPtr settingsSection = settingsModule->RegisterSettings(
 			"Project",
 			"Plugins",
-			"Voiccer4U",
-			LOCTEXT("Voiccer4USettings", "Voiccer4U"),
-			LOCTEXT("Voiccer4USettingsDescription", "Configure settings for the use of Voiccer4U."),
+			"Voiceer4U",
+			LOCTEXT("Voiceer4USettings", "Voiceer4U"),
+			LOCTEXT("Voiceer4USettingsDescription", "Configure settings for the use of Voiceer4U."),
 			GetMutableDefault<UVoiceer4UConfig>()
 		);
 		if (settingsSection.IsValid())
@@ -69,13 +69,35 @@ void FVoiceer4UModule::StartupModule()
 	Packages.Emplace(compileSuccessSound->GetOutermost());
 	Packages.Emplace(compileFailSound->GetOutermost());
 	UEditorLoadingAndSavingUtils::SavePackages(Packages, true);
+	UEditorLoadingAndSavingUtils::SaveDirtyPackages(false, true);
+
+	FEditorDelegates::OnShutdownPostPackagesSaved.AddRaw(this, &FVoiceer4UModule::OnResetSound);
+#endif // WITH_EDITOR
+}
+
+// Editor終了時に元のサウンドデータに差し替え
+void FVoiceer4UModule::OnResetSound()
+{
+#if WITH_EDITOR
+	if (!GEngine) return;
+	ResetSoundCue(compileStartSound, engineStartSuccessWave, 0.4f, 1.2f);
+	ResetSoundCue(compileSuccessSound, engineStartSuccessWave, 0.6f, 1.0f);
+	ResetSoundCue(compileFailSound, engineFailedWave, 0.4f, 1.0f);
+
+	// 変更の保存
+	TArray<UPackage*> Packages;
+	Packages.Emplace(compileStartSound->GetOutermost());
+	Packages.Emplace(compileSuccessSound->GetOutermost());
+	Packages.Emplace(compileFailSound->GetOutermost());
+	UEditorLoadingAndSavingUtils::SavePackages(Packages, true);
+	UEditorLoadingAndSavingUtils::SaveDirtyPackages(false, true);
 #endif // WITH_EDITOR
 }
 
 // ProjectSettingsで設定したDirectory名に沿ってFileの検索 / Random再生用のNode設定
 void FVoiceer4UModule::InitializeRandomSound(USoundCue* cue, const ESoundCategory Category, const int SoundNum, const FString& Root)
 {
-	cue->ClearGraph();
+	cue->ResetGraph();
 
 	FString directory;
 	FString file;
@@ -148,7 +170,7 @@ void FVoiceer4UModule::InitializeRandomSound(USoundCue* cue, const ESoundCategor
 // Engine標準のSoundに初期化
 void FVoiceer4UModule::ResetSoundCue(USoundCue* cue, USoundWave* wave, const float Volume, const float Pitch)
 {
-	cue->ClearGraph();
+	cue->ResetGraph();
 
 	USoundNodeWavePlayer* player = cue->ConstructSoundNode<USoundNodeWavePlayer>();
 	player->SetSoundWave(wave);
