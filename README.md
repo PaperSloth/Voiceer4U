@@ -18,8 +18,9 @@ https://twitter.com/PaperSloth/status/1320701896496091136?s=20
 UE4.25.4
 
 # バージョン
-0.1.0 (Experimental)
-以下の使用上の注意点をよく読んだ上でお使いください
+0.1.0 (Experimental)<br>
+以下の使用上の注意点をよく読んだ上でお使いください<br>
+注意点2. に関してはほとんどの方には気にする程の影響がないという認識です<br>
 
 # 使用上の注意点
 1. 本Pluginを使用したProjectを起動中に同一VersionのエンジンのProjectを立ち上げることを避けてください<br>
