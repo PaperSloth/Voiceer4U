@@ -1,0 +1,24 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "Voiceer4U",
+  "Description": "",
+  "Category": "Other",
+  "CreatedBy": "PaperSloth",
+  "CreatedByURL": "https://github.com/PaperSloth/Voiceer4U",
+  "DocsURL": "https://github.com/PaperSloth/Voiceer4U",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "IsExperimentalVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "Voiceer4U",
+      "Type": "Editor",
+      "LoadingPhase": "PostEngineInit"
+    }
+  ]
+}
