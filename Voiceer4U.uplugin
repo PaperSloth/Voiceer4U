@@ -1,24 +1,24 @@
 {
-  "FileVersion": 3,
-  "Version": 1,
-  "VersionName": "1.0",
-  "FriendlyName": "Voiceer4U",
-  "Description": "",
-  "Category": "Other",
-  "CreatedBy": "PaperSloth",
-  "CreatedByURL": "https://github.com/PaperSloth/Voiceer4U",
-  "DocsURL": "https://github.com/PaperSloth/Voiceer4U",
-  "MarketplaceURL": "",
-  "SupportURL": "",
-  "CanContainContent": true,
-  "IsBetaVersion": false,
-  "IsExperimentalVersion": false,
-  "Installed": false,
-  "Modules": [
-    {
-      "Name": "Voiceer4U",
-      "Type": "Editor",
-      "LoadingPhase": "PostEngineInit"
-    }
-  ]
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "0.1",
+	"FriendlyName": "Voiceer4U",
+	"Description": "",
+	"Category": "Audio",
+	"CreatedBy": "PaperSloth",
+	"CreatedByURL": "https://twitter.com/PaperSloth",
+	"DocsURL": "https://github.com/PaperSloth/Voiceer4U",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": true,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "Voiceer4U",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
+		}
+	]
 }
