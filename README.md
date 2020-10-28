@@ -9,7 +9,7 @@ UE4版では現状以下の場合のみ設定したボイスが再生されま�
 * Launchした時
 
 デモ動画 :
-https://twitter.com/PaperSloth/status/1321117202876039168
+https://twitter.com/PaperSloth/status/1321423383754502147
 
 サンプルに使用させていただいたボイス :[巻乃もなか様](https://twitter.com/monaka_0_0_7)<br>
 ボイス配付元 : https://makinomonaka.fanbox.cc/posts/768804
@@ -53,23 +53,26 @@ UE4.25.4
 ![CB](https://user-images.githubusercontent.com/8968076/97307287-d9a26800-18a2-11eb-8502-03d1cbb8490a.png)
 2. Voiceer4U Content/MakinoMonaka/以下の下記のフォルダに任意の音声ファイルを入れる<br>
    違うキャラクターのボイスを使用したい時の工程でProject Settingsから「Root Directory」を変更している場合には<br>
-   変更した名称のFolderを作成し、既存のFolderと同様のFolder構成になるようにしてください。
-   Compile開始時は「OnCompileStart」<br>
-   Compile成功時は「OnCompileSuccess」<br>
-   Compile失敗時は「OnCompileFailed」<br>
-3. 各音声ファイルは連番指定の規定の名前とする<br>
-　　例:Compile開始時の場合<br>
-  　　「CompileSuccess0」<br>
-  　　「CompileSuccess1」<br>
-  　　「CompileSuccess2」<br>
+   変更した名称のFolderを作成し、既存のFolderと同様のFolder構成になるようにしてください。<br>
+     Compile開始時は「OnCompileStart」<br>
+     Compile成功時は「OnCompileSuccess」<br>
+     Compile失敗時は「OnCompileFailed」<br>
+3. 各音声ファイルは連番で規定の名前とする<br>
+例:Compile開始時の場合<br>
+    「CompileSuccess0」<br>
+    「CompileSuccess1」<br>
+    「CompileSuccess2」<br>
       ...<br>
-   設定したファイルがランダムで再生されるようになります。<br>
+   連番で設定したファイルがランダムで再生されるようになります。<br>
+   1つだけの場合はもちろん単一ファイルが再生されます。<br>
+   ファイルを設定していない場合にはEngineのデフォルトのサウンドが再生されます。<br>
 4. 設定後にUE4 Editorを再起動する<br>
    (Pluginの起動時のタイミングで設定しているため、再起動が必要です。ご不便をおかけします)
 
 # エンジンの標準のサウンドに戻したい時
 ※ EngineをVCSで管理している方はDiffを見ていただければですが<br>
 厳密には完全に元通りというわけではないのですが、基本的に挙動は元に戻ります。<br>
+<br>
 方法1. Pluginを無効化してEditorを閉じる
 
 方法2. Pluginは有効化したまま、設定から無効にする
